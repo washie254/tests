@@ -2,18 +2,18 @@ import React from 'react';
 import { Comment, Header } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
-function CommentItem(){
+function CommentItem(props){
     return (
         <Comment>
-          <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+          <Comment.Avatar src= {props.img} />
           <Comment.Content>
-            <Comment.Author as='a'>Alyouif</Comment.Author>
+    <Comment.Author as='a'>{props.name}</Comment.Author>
             <Comment.Metadata>
-              <div>Today at 5:42PM</div>
+              <div>{props.date}</div>
             </Comment.Metadata>
-            <Comment.Text>How artistic!</Comment.Text>
+            <Comment.Text>{props.detail}</Comment.Text>
             <Comment.Actions>
-              <Comment.Action>Reply</Comment.Action>
+              <Comment.Action>{props.action}</Comment.Action>
             </Comment.Actions>
           </Comment.Content>
         </Comment>
